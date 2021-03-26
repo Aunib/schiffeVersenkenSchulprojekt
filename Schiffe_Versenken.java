@@ -2,6 +2,8 @@
  *
  * Beschreibung
  *
+ * Lizenz: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+ *
  * @version 0.1 vom 17.09.2020
  * @Steinberg 
  */
@@ -31,7 +33,7 @@ public class Schiffe_Versenken {
       System.out.println("Es ist Spieler " + spielerAsByte(spieler) + " an der Reihe!");
       schuss();
     } // end of while
-    System.out.println("Spieler " + spielerAsByte(!spieler) + " hat gewonnen! Herzlichen Glückwunsch!");
+    System.out.println("Spieler " + spielerAsByte(!spieler) + " hat gewonnen! Herzlichen GlÃ¼ckwunsch!");
   }
       
   public static void cleanTerminal() {
@@ -74,7 +76,7 @@ public class Schiffe_Versenken {
     
     do {
       printSpielfeld(0,spielerAsByte(spieler));
-      System.out.print("Bitte gebe das Feld das du abschießen m\u00F6chtest ein:\n> ");
+      System.out.print("Bitte gebe das Feld das du abschieÃŸen m\u00F6chtest ein:\n> ");
       String input = sc.next();
       if (input.charAt(0)>64 && input.charAt(0)<75 || input.charAt(0)>96 && input.charAt(0)<107) {
         if (input.charAt(0)>64 && input.charAt(0)<75){
@@ -98,7 +100,7 @@ public class Schiffe_Versenken {
             case('-') :
               switch (spielfeld[1][spielerAsByte(!spieler)][feldV][feldH]) {
                 case('|') :
-                  boolean fullShipV = true;  //ist das Schiff vollständig zerstört?
+                  boolean fullShipV = true;  //ist das Schiff vollstÃ¤ndig zerstÃ¶rt?
                   boolean continueForV = true;
                   spielfeld[1][spielerAsByte(!spieler)][feldV][feldH] = '/';
                   spielfeld[0][spielerAsByte(spieler)][feldV][feldH] = '/';
@@ -141,7 +143,7 @@ public class Schiffe_Versenken {
                   } 
                   break;
                 case('-') :
-                  boolean fullShipH = true;  //ist das Schiff vollständig zerstört?
+                  boolean fullShipH = true;  //ist das Schiff vollstÃ¤ndig zerstÃ¶rt?
                   boolean continueForH = true;
                   spielfeld[1][spielerAsByte(!spieler)][feldV][feldH] = '~';
                   spielfeld[0][spielerAsByte(spieler)][feldV][feldH] = '~';
@@ -256,7 +258,7 @@ public class Schiffe_Versenken {
     boolean right = false;
     boolean down = false;
     printSpielfeld(1,spielerAsByte(spieler));
-    System.out.print("Bitte gib das Feld ein, in dem das Schiff der länge " + laengePlus1 + " starten soll!\n> ");
+    System.out.print("Bitte gib das Feld ein, in dem das Schiff der lÃ¤nge " + laengePlus1 + " starten soll!\n> ");
     String input = sc.next();
     if (input.charAt(0)>64 && input.charAt(0)<75 || input.charAt(0)>96 && input.charAt(0)<107) {
       if (input.charAt(0)>64 && input.charAt(0)<75){
@@ -312,7 +314,7 @@ public class Schiffe_Versenken {
           }
         }
         if (!left&&!up&&!right&&!down) {
-          System.out.println("Von dieser Position aus kann kein valides Schiff plaziert werden. Bitte wähle eine andere Startposition!");
+          System.out.println("Von dieser Position aus kann kein valides Schiff plaziert werden. Bitte wÃ¤hle eine andere Startposition!");
           plaziereSchiff(laengePlus1);
         } else {
           System.out.print("> ");
@@ -324,7 +326,7 @@ public class Schiffe_Versenken {
                   spielfeld[1][spielerAsByte(spieler)][inputV][inputH-i] = '-';
                 }
               } else {
-                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewünschte Schiffsposition erneut an!");
+                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewÃ¼nschte Schiffsposition erneut an!");
                 plaziereSchiff(laengePlus1);  
               } // end of if-else
               break;
@@ -334,7 +336,7 @@ public class Schiffe_Versenken {
                   spielfeld[1][spielerAsByte(spieler)][inputV-i][inputH] = '|';
                 }
               } else {
-                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewünschte Schiffsposition erneut an!");
+                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewÃ¼nschte Schiffsposition erneut an!");
                 plaziereSchiff(laengePlus1);  
               } // end of if-else
               break;
@@ -344,7 +346,7 @@ public class Schiffe_Versenken {
                   spielfeld[1][spielerAsByte(spieler)][inputV][inputH+i] = '-';
                 }
               } else {
-                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewünschte Schiffsposition erneut an!");
+                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewÃ¼nschte Schiffsposition erneut an!");
                 plaziereSchiff(laengePlus1);  
               } // end of if-else
               break;
@@ -354,12 +356,12 @@ public class Schiffe_Versenken {
                   spielfeld[1][spielerAsByte(spieler)][inputV+i][inputH] = '|';
                 }
               } else {
-                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewünschte Schiffsposition erneut an!");
+                System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewÃ¼nschte Schiffsposition erneut an!");
                 plaziereSchiff(laengePlus1);  
               } // end of if-else                             
               break;
             default: 
-              System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewünschte Schiffsposition erneut an!");
+              System.out.println("Dies ist keine valide Richtung. Bitte geben Sie die gewÃ¼nschte Schiffsposition erneut an!");
               plaziereSchiff(laengePlus1);
           } // end of switch
         } // end of if-else
